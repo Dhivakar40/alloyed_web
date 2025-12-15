@@ -10,7 +10,7 @@ import { Services } from "@/components/sections/Services";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
-import LiquidEther from '@/components/LiquidEther';
+
 import { Process } from "@/components/sections/Process";
 import { FAQ } from "@/components/sections/FAQ";
 
