@@ -68,9 +68,11 @@ export function Contact() {
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <Section id="contact" className="flex min-h-screen w-full flex-col items-center justify-center px-6 py-24 relative z-10">
+            <Section id="contact" className="py-24 relative z-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
+
                 {/* --- HEADER --- */}
-                <div className="text-center mb-16 max-w-3xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +87,7 @@ export function Contact() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-black text-white leading-tight mb-4"
+                        className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 text-center"
                     >
                         Ready to separate yourself <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
@@ -115,8 +117,8 @@ export function Contact() {
                                 <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-6 text-green-400">
                                     <CheckCircle2 size={40} />
                                 </div>
-                                <h3 className="text-3xl font-bold text-white mb-4">Request Received!</h3>
-                                <p className="text-slate-300 text-lg mb-8 max-w-sm">
+                                <h3 className="text-2xl font-bold text-slate-100 mb-3">Request Received!</h3>
+                                <p className="text-base text-slate-400 leading-relaxed mb-8 max-w-sm">
                                     Thank you, {formState.name}. We have sent a confirmation email to your inbox.
                                 </p>
                                 <button 
@@ -204,6 +206,7 @@ export function Contact() {
                         )}
                     </AnimatePresence>
                 </motion.div>
+                </div>
             </Section>
 
             {/* ======================= */}

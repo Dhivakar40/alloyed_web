@@ -37,25 +37,21 @@ export function Process() {
     ];
 
     return (
-        <Section id="process" className="flex min-h-[80vh] items-center justify-center bg-transparent px-4 py-24">
-            <div className="w-full max-w-[95%] xl:max-w-7xl mx-auto relative z-10">
+        <Section id="process" className="py-24 bg-transparent">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16 relative z-10">
                 
-                <div className="text-center mb-20">
+                <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
+                    <p className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">
+                        Workflow
+                    </p>
                     <motion.h2 
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-base font-bold uppercase tracking-[0.2em] text-blue-500 mb-4"
-                    >
-                        Workflow
-                    </motion.h2>
-                    <motion.h3 
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-black text-white"
+                        className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4"
                     >
                         How We Work
-                    </motion.h3>
+                    </motion.h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -97,12 +93,11 @@ export function Process() {
                                         </div>
                                         <div>
                                             <h4 className="text-xl font-bold text-white leading-none mb-1.5">{step.title}</h4>
-                                            <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">{step.subtitle}</span>
+                                            <span className="text-sm font-bold text-blue-400 uppercase tracking-widest">{step.subtitle}</span>
                                         </div>
                                     </div>
 
-                                    {/* TEXT UPDATE: Larger and Brighter */}
-                                    <p className="text-slate-300 text-base leading-relaxed relative z-10 font-medium">
+                                    <p className="text-base text-slate-400 leading-relaxed relative z-10">
                                         {step.description}
                                     </p>
 

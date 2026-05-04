@@ -9,9 +9,10 @@ export function About() {
 
     return (
         // 1. SECTION: Transparent to reveal global DarkVeil background
-        <Section id="about" className="flex min-h-[80vh] items-center justify-center p-10 bg-transparent">
-            
-            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <Section id="about" className="py-24 bg-transparent">
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
                 
                 {/* --- LEFT COLUMN: TEXT CONTENT --- */}
                 <div className="max-w-2xl">
@@ -19,7 +20,7 @@ export function About() {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="text-sm font-bold uppercase tracking-widest text-blue-500 mb-6"
+                        className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2"
                     >
                         About Us
                     </motion.h2>
@@ -47,7 +48,7 @@ export function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="text-slate-300 text-lg md:text-xl leading-relaxed font-medium"
+                        className="text-base text-slate-400 leading-relaxed"
                     >
                         An alloy is stronger than its individual parts—and so are we. <strong className="text-white">ALLOYED</strong> brings together the sharpest minds in full-stack development, blockchain innovation, and experience design to create software that withstands the test of time. 
                         <br /><br />
@@ -75,7 +76,7 @@ export function About() {
                     className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-[#0B0F17] group cursor-default"
                 >
                     {/* PLACEHOLDER / IMAGE SLOT */}
-                    {/* Once you have an image: <img src="..." className="object-cover w-full h-full" /> */}
+                    <img src="/images/aboutus.png" className="object-cover w-full h-full" />
                     
                     <div className="flex flex-col items-center justify-center w-full h-full text-slate-500 relative z-10">
                         <span className="text-lg font-medium border-2 border-dashed border-slate-700 p-6 rounded-xl group-hover:border-blue-500/50 group-hover:text-blue-400 transition-colors">
@@ -87,6 +88,7 @@ export function About() {
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-transparent to-transparent opacity-60 pointer-events-none" />
                 </motion.div>
 
+                </div>
             </div>
         </Section>
     );

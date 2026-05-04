@@ -5,7 +5,7 @@ import { Section } from "../ui/Section";
 import { Monitor, Smartphone, Cpu, Handshake, PenTool, LockIcon, Palette } from "lucide-react";
 
 export function Services() {
-    <section id="services"></section>
+
     const services = [
         {
             title: "Mobile App Development",
@@ -51,10 +51,12 @@ export function Services() {
     const headingText = "Services We Provide";
 
     return (
-        <Section id="services" className="flex min-h-screen flex-col items-center justify-center bg-transparent px-4 py-24">
-            
-            <div className="mb-24 text-center relative z-10">
-                <h2 className="text-5xl md:text-6xl font-black tracking-tight text-white flex justify-center gap-2 overflow-hidden">
+        <Section id="services" className="py-24 bg-transparent">
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
+
+            <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 flex flex-wrap justify-center gap-x-1 overflow-hidden">
                     {headingText.split("").map((char, i) => (
                         <motion.span
                             key={i}
@@ -74,11 +76,11 @@ export function Services() {
                     whileInView={{ width: "120px" }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="h-1.5 bg-blue-500 mx-auto mt-6 rounded-full"
+                    className="h-1.5 bg-blue-500 mt-6 rounded-full mx-auto"
                 />
             </div>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 w-full max-w-[95%] mx-auto relative z-10">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 relative z-10">
                 {services.map((service, index) => (
                     <motion.div
                         key={index}
@@ -99,16 +101,17 @@ export function Services() {
                             {service.icon}
                         </div>
                         
-                        <h3 className="mb-4 text-2xl font-bold text-white tracking-wide">{service.title}</h3>
+                        <h3 className="text-2xl font-bold text-slate-100 mb-3">{service.title}</h3>
                         
-                        {/* UPDATED TEXT: Larger (text-base) and Brighter (text-slate-300) */}
-                        <p className="text-slate-300 text-base leading-relaxed flex-grow font-medium">
+                        <p className="text-base text-slate-400 leading-relaxed flex-grow">
                             {service.description}
                         </p>
                         
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </motion.div>
                 ))}
+            </div>
+
             </div>
         </Section>
     );

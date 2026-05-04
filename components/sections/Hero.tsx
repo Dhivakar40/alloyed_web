@@ -76,7 +76,7 @@ export function Hero() {
                 />
             </div>
 
-            <div className="container mx-auto grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center relative z-10">
                 
                 {/* --- LEFT COLUMN --- */}
                 <motion.div
