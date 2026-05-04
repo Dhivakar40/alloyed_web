@@ -12,7 +12,7 @@ export function Projects() {
             category: "Creative Portfolio",
             description: "A highly interactive, performance-optimized personal portfolio.",
             link: "https://praveenkdev.vercel.app",
-            media: "/images/portfolio.png", // Add this image to your public folder
+            media: "/images/portfolio.png", 
             type: "link"
         },
         {
@@ -21,7 +21,7 @@ export function Projects() {
             category: "Corporate Platform",
             description: "A modern, professional company landing page designed for conversion.",
             link: "https://pure-petal.vercel.app/",
-            media: "/images/pure-petal.png", // Add this image to your public folder
+            media: "/images/pure-petal.png", 
             type: "link"
         },
         {
@@ -30,7 +30,7 @@ export function Projects() {
             category: "Corporate Platform",
             description: "Scalable enterprise web application focused on seamless user experience.",
             link: "https://imsweb.vercel.app/",
-            media: "/images/imsweb.png", // Add this image to your public folder
+            media: "/images/imsweb.png", 
             type: "link"
         },
         {
@@ -39,7 +39,7 @@ export function Projects() {
             category: "Mobile Application",
             description: "Fluid, native mobile experience demonstrating our cross-platform capabilities.",
             link: null,
-            media: "/videos/mobile-demo.mp4", // Add your video to public/videos/
+            media: "/videos/mobile-demo.mp4", 
             type: "video"
         }
     ];
@@ -54,13 +54,57 @@ export function Projects() {
 
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 mb-16">
                     {projects.map((project, index) => {
-                        // Dynamically choose wrapper based on if it's a link or just a video display
-                        const Wrapper = project.type === "link" ? "a" : "div";
-                        const wrapperProps = project.type === "link" ? {
-                            href: project.link,
-                            target: "_blank",
-                            rel: "noopener noreferrer"
-                        } : {};
+                        
+                        // We package the visuals and text into one clean chunk
+                        const innerContent = (
+                            <>
+                                {/* Media Layer (Image or Video) */}
+                                {project.type === "video" ? (
+                                    <video
+                                        src={project.media}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="absolute inset-0 h-full w-full object-contain bg-zinc-900 transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                ) : (
+                                    <div
+                                        className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                                        style={{
+                                            backgroundImage: `url(${project.media})`,
+                                            backgroundSize: "contain",
+                                            backgroundPosition: "center",
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundColor: "#18181b" 
+                                        }}
+                                    />
+                                )}
+
+                                {/* Gradient Overlay for Text Readability */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition-opacity duration-500" />
+
+                                {/* Text Content */}
+                                <div className="absolute bottom-0 p-8 w-full transition-transform duration-500 group-hover:-translate-y-2">
+                                    <p className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">
+                                        {project.category}
+                                    </p>
+
+                                    <h3 className="text-2xl font-bold text-slate-100 mb-3 flex items-center gap-2">
+                                        {project.title}
+                                        {project.type === "link" && (
+                                            <svg className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        )}
+                                    </h3>
+
+                                    <p className="text-base text-slate-400 leading-relaxed">
+                                        {project.description}
+                                    </p>
+                                </div>
+                            </>
+                        );
 
                         return (
                             <motion.div
@@ -72,57 +116,21 @@ export function Projects() {
                                 whileHover={{ scale: 1.02 }}
                                 className="group relative aspect-video overflow-hidden rounded-lg bg-zinc-900 cursor-pointer"
                             >
-                                <Wrapper {...wrapperProps} className="block w-full h-full">
-
-                                    {/* Media Layer (Image or Video) */}
-                                    {project.type === "video" ? (
-                                        <video
-                                            src={project.media}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            // CHANGED: object-cover to object-contain
-                                            className="absolute inset-0 h-full w-full object-contain bg-zinc-900 transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                    ) : (
-                                        <div
-                                            className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                                            style={{
-                                                backgroundImage: `url(${project.media})`,
-                                                // CHANGED: "cover" to "contain" so the whole image fits
-                                                backgroundSize: "contain",
-                                                backgroundPosition: "center",
-                                                // ADDED: Prevents the image from tiling to fill empty space
-                                                backgroundRepeat: "no-repeat",
-                                                backgroundColor: "#18181b" // Matches tailwind zinc-900
-                                            }}
-                                        />
-                                    )}
-
-                                    {/* Gradient Overlay for Text Readability */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition-opacity duration-500" />
-
-                                    {/* Text Content */}
-                                    <div className="absolute bottom-0 p-8 w-full transition-transform duration-500 group-hover:-translate-y-2">
-                                        <p className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">
-                                            {project.category}
-                                        </p>
-
-                                        <h3 className="text-2xl font-bold text-slate-100 mb-3 flex items-center gap-2">
-                                            {project.title}
-                                            {project.type === "link" && (
-                                                <svg className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                                </svg>
-                                            )}
-                                        </h3>
-
-                                        <p className="text-base text-slate-400 leading-relaxed">
-                                            {project.description}
-                                        </p>
+                                {/* Conditionally wrap the content in either an anchor tag or a div */}
+                                {project.type === "link" ? (
+                                    <a 
+                                        href={project.link || "#"} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="block w-full h-full"
+                                    >
+                                        {innerContent}
+                                    </a>
+                                ) : (
+                                    <div className="block w-full h-full">
+                                        {innerContent}
                                     </div>
-                                </Wrapper>
+                                )}
                             </motion.div>
                         );
                     })}
