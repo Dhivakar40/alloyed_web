@@ -111,7 +111,6 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                                                 <input 
                                                     required 
                                                     type="text" 
-                                                    placeholder="Shine Leo"
                                                     className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-blue-500 outline-none transition-colors"
                                                     value={formData.name}
                                                     onChange={e => setFormData({...formData, name: e.target.value})}
@@ -122,7 +121,6 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                                                 <input 
                                                     required 
                                                     type="email" 
-                                                    placeholder="alloyedtech@gmail.com"
                                                     className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-blue-500 outline-none transition-colors"
                                                     value={formData.email}
                                                     onChange={e => setFormData({...formData, email: e.target.value})}
@@ -133,7 +131,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-1">
                                                 <label className="text-xs font-bold text-slate-500 uppercase flex items-center gap-1">
-                                                    <Calendar size={12} /> Date
+                                                    <Calendar size={12} /> Preferred Date
                                                 </label>
                                                 <input 
                                                     required 
