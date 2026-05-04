@@ -43,7 +43,7 @@ export function FAQ() {
     const headingText = "Frequently Asked to us";
 
     return (
-        <Section id="faq" className="py-24 bg-transparent relative overflow-hidden">
+        <Section id="faq" className="py-16 md:py-24 bg-transparent relative overflow-hidden">
             
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-blue-500/5 blur-[120px] pointer-events-none" />
 
@@ -52,7 +52,7 @@ export function FAQ() {
                 <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
                     <p className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">Clarification</p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 flex flex-wrap justify-center gap-x-1 overflow-hidden">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 flex flex-wrap justify-center gap-x-1 overflow-hidden">
                         {headingText.split("").map((char, i) => (
                             <motion.span
                                 key={i}
@@ -89,7 +89,7 @@ export function FAQ() {
                                     backgroundColor: "rgba(30, 41, 59, 1)", 
                                 }}
                                 className={`
-                                    group relative overflow-hidden rounded-2xl border p-8 cursor-pointer transition-all duration-500 z-20
+                                    group relative overflow-hidden rounded-2xl border p-5 md:p-8 cursor-pointer transition-all duration-500 z-20
                                     ${isOpen 
                                         ? "bg-[#0B0F17] border-blue-500/50 shadow-[0_0_30px_-10px_rgba(59,130,246,0.3)]" 
                                         : "bg-[#0B0F17] border-white/10"
@@ -104,7 +104,7 @@ export function FAQ() {
                                 )}
 
                                 <div className="relative z-10 flex items-center justify-between gap-6">
-                                    <h3 className={`text-xl font-bold transition-colors duration-300 ${isOpen ? "text-white" : "text-slate-200 group-hover:text-white"}`}>
+                                    <h3 className={`text-base md:text-xl font-bold transition-colors duration-300 ${isOpen ? "text-white" : "text-slate-200 group-hover:text-white"}`}>
                                         {faq.question}
                                     </h3>
                                     

@@ -5,7 +5,7 @@ import { Section } from "../ui/Section";
 
 export function WhyUs() {
     return (
-        <Section id="why-us" className="py-24 bg-transparent">
+        <Section id="why-us" className="py-16 md:py-24 bg-transparent">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16 relative z-10">
 
@@ -15,7 +15,7 @@ export function WhyUs() {
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4"
+                        className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4"
                     >
                         Why Alloyed ?
                     </motion.h2>
@@ -48,12 +48,12 @@ export function WhyUs() {
                             boxShadow: "0px 20px 40px -10px rgba(59, 130, 246, 0.2)"
                         }}
 
-                        className="relative z-20 overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F17] p-10 backdrop-blur-sm flex flex-col items-center justify-center text-center group cursor-default"
+                        className="relative z-20 overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F17] p-8 md:p-10 backdrop-blur-sm flex flex-col items-center justify-center text-center group cursor-default"
                     >
                         <h3 className="text-2xl font-bold text-slate-100 mb-3 uppercase tracking-wider">
                             Our Moto
                         </h3>
-                        <div className="flex flex-col gap-3 text-2xl md:text-3xl font-semibold text-white">
+                        <div className="flex flex-col gap-3 text-xl md:text-2xl lg:text-3xl font-semibold text-white">
                             <span>Refined Quality.</span>
                             <span>Earned Trust.</span>
                             <span>Client Success.</span>
@@ -76,7 +76,7 @@ export function WhyUs() {
                             boxShadow: "0px 20px 40px -10px rgba(59, 130, 246, 0.2)"
                         }}
 
-                        className="relative z-20 overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F17] p-10 backdrop-blur-sm flex flex-col items-center justify-center group cursor-default"
+                        className="relative z-20 overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F17] p-8 md:p-10 backdrop-blur-sm flex flex-col items-center justify-center group cursor-default"
                     >
                         <h3 className="text-2xl font-bold text-slate-100 mb-3 uppercase tracking-wider">
                             Our Vision

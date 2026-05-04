@@ -45,11 +45,11 @@ export function Projects() {
     ];
 
     return (
-        <Section id="work" className="py-24 bg-transparent">
+        <Section id="work" className="py-16 md:py-24 bg-transparent">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
                 <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
                     <p className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">Portfolio</p>
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">Our Works</h2>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Our Works</h2>
                 </div>
 
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 mb-16">
@@ -85,12 +85,12 @@ export function Projects() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition-opacity duration-500" />
 
                                 {/* Text Content */}
-                                <div className="absolute bottom-0 p-8 w-full transition-transform duration-500 group-hover:-translate-y-2">
+                                <div className="absolute bottom-0 p-4 md:p-8 w-full transition-transform duration-500 group-hover:-translate-y-2">
                                     <p className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">
                                         {project.category}
                                     </p>
 
-                                    <h3 className="text-2xl font-bold text-slate-100 mb-3 flex items-center gap-2">
+                                    <h3 className="text-xl md:text-2xl font-bold text-slate-100 mb-3 flex items-center gap-2">
                                         {project.title}
                                         {project.type === "link" && (
                                             <svg className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -9,10 +9,10 @@ export function About() {
 
     return (
         // 1. SECTION: Transparent to reveal global DarkVeil background
-        <Section id="about" className="py-24 bg-transparent">
+        <Section id="about" className="py-16 md:py-24 bg-transparent">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
                 
                 {/* --- LEFT COLUMN: TEXT CONTENT --- */}
                 <div className="max-w-2xl">
@@ -26,7 +26,7 @@ export function About() {
                     </motion.h2>
 
                     {/* Animated Hero Title */}
-                    <div className="flex flex-wrap gap-x-3 mb-8 text-5xl md:text-7xl font-black leading-tight text-white">
+                    <div className="flex flex-wrap gap-x-3 mb-6 md:mb-8 text-4xl md:text-5xl lg:text-7xl font-black leading-tight text-white">
                         {heroWords.map((word, i) => (
                             <span key={i} className="relative overflow-hidden inline-block">
                                 <motion.span
@@ -73,7 +73,7 @@ export function About() {
                     }}
 
                     // STYLE: Solid Dark Background (bg-[#0B0F17]) instead of transparent
-                    className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-[#0B0F17] group cursor-default"
+                    className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-[#0B0F17] group cursor-default"
                 >
                     {/* PLACEHOLDER / IMAGE SLOT */}
                     <img src="/images/aboutus.png" className="object-cover w-full h-full" />

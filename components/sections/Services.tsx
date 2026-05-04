@@ -51,12 +51,12 @@ export function Services() {
     const headingText = "Services We Provide";
 
     return (
-        <Section id="services" className="py-24 bg-transparent">
+        <Section id="services" className="py-16 md:py-24 bg-transparent">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
 
             <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 flex flex-wrap justify-center gap-x-1 overflow-hidden">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 flex flex-wrap justify-center gap-x-1 overflow-hidden">
                     {headingText.split("").map((char, i) => (
                         <motion.span
                             key={i}
@@ -95,7 +95,7 @@ export function Services() {
                             backgroundColor: "rgba(30, 41, 59, 1)", 
                             boxShadow: "0px 20px 40px -10px rgba(59, 130, 246, 0.2)"
                         }}
-                        className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F17] p-8 backdrop-blur-sm flex flex-col h-full cursor-default z-20"
+                        className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F17] p-6 md:p-8 backdrop-blur-sm flex flex-col h-full cursor-default z-20"
                     >
                         <div className="mb-6 text-blue-500 transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-400">
                             {service.icon}

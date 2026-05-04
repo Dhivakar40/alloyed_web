@@ -66,7 +66,7 @@ export function Hero() {
     }, [page]);
 
     return (
-        <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 pt-24 pb-12 lg:px-12">
+        <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-4 pt-20 pb-12 sm:px-6 lg:px-12">
             
             <div className="absolute inset-0 z-0">
                 <LiquidEther
@@ -92,7 +92,7 @@ export function Hero() {
                         </span>
                     </h1>
 
-                    <p className="mb-10 max-w-2xl text-lg text-slate-300 leading-relaxed sm:text-xl drop-shadow-md">
+                    <p className="mb-8 md:mb-10 max-w-2xl text-base text-slate-300 leading-relaxed sm:text-lg md:text-xl drop-shadow-md">
                         At ALLOYED, we design, develop, test, and deliver exceptional digital solutions — from mobile apps and web platforms to enterprise software across all domains. With end-to-end quality assurance, innovation, and precision at our core, we empower businesses to evolve in a connected world, forging technology that’s strong, scalable, and perfectly aligned with your vision.
                     </p>
 
@@ -116,7 +116,7 @@ export function Hero() {
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                     className="relative flex justify-center lg:justify-end w-full"
                 >
-                    <div className="relative w-full max-w-2xl aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-sm">
+                    <div className="relative w-full max-w-2xl aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-sm">
                         
                         <AnimatePresence initial={false} custom={direction}>
                             <motion.img

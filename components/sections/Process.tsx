@@ -37,7 +37,7 @@ export function Process() {
     ];
 
     return (
-        <Section id="process" className="py-24 bg-transparent">
+        <Section id="process" className="py-16 md:py-24 bg-transparent">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16 relative z-10">
                 
                 <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
@@ -48,7 +48,7 @@ export function Process() {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4"
+                        className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4"
                     >
                         How We Work
                     </motion.h2>
@@ -80,7 +80,7 @@ export function Process() {
                                         backgroundColor: "rgba(30, 41, 59, 1)", 
                                         boxShadow: "0px 20px 40px -10px rgba(59, 130, 246, 0.2)"
                                     }}
-                                    className="group relative flex-grow overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F17] p-8 backdrop-blur-sm cursor-default z-20"
+                                    className="group relative flex-grow overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F17] p-6 md:p-8 backdrop-blur-sm cursor-default z-20"
                                 >
                                     {/* Watermark: Increased opacity for visibility */}
                                     <div className="absolute -top-4 -right-2 text-8xl font-black text-white opacity-[0.05] select-none group-hover:opacity-[0.1] transition-opacity">

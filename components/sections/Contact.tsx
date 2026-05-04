@@ -68,7 +68,7 @@ export function Contact() {
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <Section id="contact" className="py-24 relative z-10">
+            <Section id="contact" className="py-16 md:py-24 relative z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
 
                 {/* --- HEADER --- */}
@@ -87,7 +87,7 @@ export function Contact() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 text-center"
+                        className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 text-center"
                     >
                         Ready to separate yourself <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
@@ -101,7 +101,7 @@ export function Contact() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="w-full max-w-xl mx-auto bg-[#0B0F17] border border-white/10 p-10 rounded-3xl shadow-2xl relative overflow-hidden z-20"
+                    className="w-full max-w-xl mx-auto bg-[#0B0F17] border border-white/10 p-6 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden z-20"
                 >
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 opacity-50" />
 
@@ -235,7 +235,7 @@ export function Contact() {
                         Follow Us On
                     </h3>
                     
-                    <div className="flex gap-8">
+                    <div className="flex gap-4 md:gap-8">
                         {/* Instagram */}
                         <a href="https://instagram.com/alloyedtech" target="_blank" rel="noopener noreferrer" className="group relative flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-all hover:border-pink-500/50 hover:bg-pink-500/10 hover:text-pink-500 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(236,72,153,0.3)]">
                             <Instagram size={28} />
