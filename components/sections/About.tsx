@@ -19,7 +19,7 @@ export function About() {
                     <motion.h2 
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2"
                     >
                         About Us
@@ -32,7 +32,7 @@ export function About() {
                                 <motion.span
                                     initial={{ y: "100%" }}
                                     whileInView={{ y: 0 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                                     transition={{ duration: 0.5, delay: i * 0.1, ease: "backOut" }}
                                     className="inline-block"
                                 >
@@ -46,7 +46,7 @@ export function About() {
                     <motion.p 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-base text-slate-400 leading-relaxed"
                     >
@@ -60,7 +60,7 @@ export function About() {
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                     transition={{ duration: 0.8 }}
                     
                     // --- NEW HOVER LOGIC (Matches Services/Process Cards) ---

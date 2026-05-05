@@ -111,7 +111,7 @@ export function Projects() {
                                 key={project.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                                 transition={{ delay: index * 0.1 }}
                                 whileHover={{ scale: 1.02 }}
                                 className="group relative aspect-video overflow-hidden rounded-lg bg-zinc-900 cursor-pointer"

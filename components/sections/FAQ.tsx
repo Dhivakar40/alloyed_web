@@ -59,7 +59,7 @@ export function FAQ() {
                                 custom={i}
                                 initial="hidden"
                                 whileInView="visible"
-                                viewport={{ once: true }}
+                                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                                 variants={headingVariants}
                                 className={char === " " ? "w-3" : ""}
                             >
@@ -79,7 +79,7 @@ export function FAQ() {
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                                 transition={{ delay: index * 0.1 }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
                                 whileHover={{ 

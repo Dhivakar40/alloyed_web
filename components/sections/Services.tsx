@@ -63,7 +63,7 @@ export function Services() {
                             custom={i}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                             variants={headingVariants}
                             className={char === " " ? "w-3" : ""}
                         >
@@ -74,7 +74,7 @@ export function Services() {
                 <motion.div 
                     initial={{ width: 0 }}
                     whileInView={{ width: "120px" }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="h-1.5 bg-blue-500 mt-6 rounded-full mx-auto"
                 />
@@ -86,7 +86,7 @@ export function Services() {
                         key={index}
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                         transition={{ delay: index * 0.1, duration: 0.5, type: "tween" }}
                         whileHover={{ 
                             y: -8,
