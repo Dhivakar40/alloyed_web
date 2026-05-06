@@ -10,7 +10,7 @@ import LogoLoop, { LogoItem } from "../ui/LogoLoop";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFlutter, SiPostgresql, SiGraphql } from 'react-icons/si';
 
 export function Contact() {
-    const [formState, setFormState] = useState({ name: "", email: "", request: "" });
+    const [formState, setFormState] = useState({ name: "", email: "", phone: "", request: "" });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
     // --- 2. DEFINE YOUR TECH LOGOS ---
@@ -42,7 +42,7 @@ export function Contact() {
             });
             if (response.ok) {
                 setStatus("success");
-                setFormState({ name: "", email: "", request: "" });
+                setFormState({ name: "", email: "", phone: "", request: "" });
             } else {
                 setStatus("error");
             }
@@ -137,6 +137,7 @@ export function Contact() {
                                 className="space-y-8"
                                 onSubmit={handleSubmit}
                             >
+                                {/* ADDED: Name Field Restored Here */}
                                 <div>
                                     <label className="block text-base font-semibold text-slate-300 mb-2 ml-1">Name</label>
                                     <motion.input 
@@ -152,6 +153,23 @@ export function Contact() {
                                         className="w-full bg-[#1A1F2E] border border-white/10 rounded-xl p-4 text-white text-lg placeholder-slate-500 focus:outline-none transition-colors" 
                                     />
                                 </div>
+
+                                <div>
+                                    <label className="block text-base font-semibold text-slate-300 mb-2 ml-1">Contact Number</label>
+                                    <motion.input 
+                                        required 
+                                        name="phone" 
+                                        value={formState.phone} 
+                                        onChange={handleChange} 
+                                        type="tel" 
+                                        placeholder="+91 XXXXX XXXXX" 
+                                        variants={inputVariants} 
+                                        initial="rest" 
+                                        whileFocus="focus" 
+                                        className="w-full bg-[#1A1F2E] border border-white/10 rounded-xl p-4 text-white text-lg placeholder-slate-500 focus:outline-none transition-colors" 
+                                    />
+                                </div>
+                                
                                 <div>
                                     <label className="block text-base font-semibold text-slate-300 mb-2 ml-1">Email Address</label>
                                     <motion.input 
@@ -167,6 +185,7 @@ export function Contact() {
                                         className="w-full bg-[#1A1F2E] border border-white/10 rounded-xl p-4 text-white text-lg placeholder-slate-500 focus:outline-none transition-colors" 
                                     />
                                 </div>
+                                
                                 <div>
                                     <label className="block text-base font-semibold text-slate-300 mb-2 ml-1">How can we help?</label>
                                     <motion.textarea 
@@ -182,6 +201,7 @@ export function Contact() {
                                         className="w-full bg-[#1A1F2E] border border-white/10 rounded-xl p-4 text-white text-lg placeholder-slate-500 focus:outline-none transition-colors resize-none" 
                                     />
                                 </div>
+                                
                                 <motion.button 
                                     disabled={status === "loading"} 
                                     whileHover={{ scale: 1.02 }} 

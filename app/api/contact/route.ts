@@ -5,7 +5,7 @@ export async function POST(req: Request) {
   try {
     // 1. Destructure 'type' along with the other fields
     // type will be either 'contact' or 'consultation'
-    const { name, email, request, type } = await req.json();
+    const { name, email, request, type, phone } = await req.json();
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -69,7 +69,9 @@ export async function POST(req: Request) {
           <h3 style="color: #2563eb;">${adminHeader}</h3>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #2563eb;">
+          <!-- THIS IS THE NEW LINE FOR THE PHONE NUMBER -->
+          <p><strong>Phone:</strong> ${phone || 'Not provided'}</p> 
+          <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #2563eb; margin-top: 15px;">
             <strong>Details:</strong><br/>
             ${request ? request.replace(/\n/g, '<br/>') : 'No details provided.'}
           </div>

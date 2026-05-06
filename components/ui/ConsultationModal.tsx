@@ -14,6 +14,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        phone: "", // ADDED: Phone state
         date: "",
         time: "",
         topic: ""
@@ -27,9 +28,10 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
         const messagePayload = {
             name: formData.name,
             email: formData.email,
-            type: "consultation", // <--- Critical for routing logic
-            // We combine details into the 'request' field for the Admin Email
-            request: `CONSULTATION REQUEST\n\nPreferred Date: ${formData.date}\nPreferred Time: ${formData.time}\n\nTopic: ${formData.topic}`
+            phone: formData.phone, // ADDED: Pass phone directly just in case your backend needs it
+            type: "consultation", 
+            // ADDED: Bundled the phone number into the main request text so it easily formats into the email
+            request: `CONSULTATION REQUEST\n\nContact Number: ${formData.phone}\nPreferred Date: ${formData.date}\nPreferred Time: ${formData.time}\n\nTopic: ${formData.topic}`
         };
 
         try {
@@ -45,7 +47,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                 setTimeout(() => {
                     onClose();
                     setStatus("idle");
-                    setFormData({ name: "", email: "", date: "", time: "", topic: "" });
+                    setFormData({ name: "", email: "", phone: "", date: "", time: "", topic: "" });
                 }, 4000);
             } else {
                 setStatus("idle");
@@ -126,6 +128,19 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                                                     onChange={e => setFormData({...formData, email: e.target.value})}
                                                 />
                                             </div>
+                                        </div>
+
+                                        {/* ADDED: Phone Number Field */}
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-bold text-slate-500 uppercase">Contact Number</label>
+                                            <input 
+                                                required 
+                                                type="tel" 
+                                                placeholder="+91 00000 00000"
+                                                className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-blue-500 outline-none transition-colors"
+                                                value={formData.phone}
+                                                onChange={e => setFormData({...formData, phone: e.target.value})}
+                                            />
                                         </div>
 
                                         <div className="grid grid-cols-2 gap-4">
